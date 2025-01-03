@@ -1,0 +1,7 @@
+flask==2.0.1
+selenium==4.1.0
+pymongo==4.0.1
+python-dotenv==0.19.0
+webdriver_manager==3.5.2
+requests==2.26.0
+python-proxymesh==1.0.0

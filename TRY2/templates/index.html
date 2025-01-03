@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter Trend Scraper</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>Twitter Trend Scraper</h1>
+    <button id="scrapeButton">Scrape Trends</button>
+    <div id="result"></div>
+
+    <script>
+        document.getElementById('scrapeButton').addEventListener('click', async () => {
+            try {
+                const response = await axios.post('/scrape');
+                document.getElementById('result').innerText = response.data.message;
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('result').innerText = 'An error occurred while scraping.';
+            }
+        });
+    </script>
+</body>
+</html>
+
